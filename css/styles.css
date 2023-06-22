@@ -69,8 +69,8 @@ h1,
 h2,
 .h2 {
   font-family: var(--bs-font-serif);
-  font-size: 35px;
-  line-height: 40px;
+  font-size: 25px;
+  line-height: 32px;
   font-weight: 700;
   color: var(--bs-dark);
 }
@@ -78,8 +78,8 @@ h2,
 h3,
 .h3 {
   font-family: var(--bs-font-serif);
-  font-size: 35px;
-  line-height: 40px;
+  font-size: 25px;
+  line-height: 32px;
   font-weight: 700;
   color: var(--bs-dark);
 }
@@ -152,11 +152,17 @@ a {
 }
 
 .bg-grid {
-  background-image: url(../img/bg/bg-cross-gray-09.svg);
+  background-image: url(../img/bg/bg-cross-gray.svg);
   background-repeat: repeat;
 }
 .bg-light.bg-grid {
   background-image: url(../img/bg/bg-cross-dark.svg);
+}
+.bg-dark.bg-grid {
+  background-image: url(../img/bg/bg-cross-gray-09.svg);
+}
+.bg-secondary.bg-grid {
+  background-image: url(../img/bg/bg-cross-gray-09.svg);
 }
 
 .bg-secondary .subtitle {
@@ -304,24 +310,19 @@ a {
 /* icons list */
 .icons-list {
   width: 100%;
-  overflow: auto;
   padding: 23px 0 0;
+  overflow: hidden;
 }
-.icons-list ul {
-  margin: 0;
+.icons-list .swiper-06 {
   padding: 0 15px 43px;
-  list-style: none;
-  display: inline-flex;
-  justify-content: center;
-  min-width: 100%;
 }
-.icons-list ul li {
-  margin: 0;
-  min-width: 170px;
+.icons-list .swiper-slide {
+  height: auto;
+  width: auto;
   text-align: center;
   white-space: nowrap;
 }
-.icons-list ul li a {
+.icons-list a {
   text-decoration: none;
 }
 .icons-list .icon {
@@ -793,9 +794,9 @@ textarea.form-control {
   left: 0;
   right: 0;
   bottom: 63px;
-  background-color: #fff;
+  background-color: var(--bs-dark);
   padding: 0;
-  transition: all 0.3s linear;
+  transition: all 0.15s linear;
   height: 0;
   overflow: auto;
 }
@@ -803,9 +804,10 @@ textarea.form-control {
   height: calc(100% - 63px);
 }
 .navbar-top {
+  width: 100%;
   margin: 0;
   color: #fff;
-  padding: 30px 15px;
+  padding: 0;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   font-size: 14px;
@@ -814,9 +816,14 @@ textarea.form-control {
   --bs-link-color-rgb: 255, 255, 255;
   --bs-link-hover-color-rgb: var(--bs-primary-rgb);
 }
+.navbar-top a {
+  display: block;
+  padding: 5px 0;
+}
 
 .navbar-nav {
   margin: 0;
+  width: 100%;
 }
 .navbar-nav ul {
   margin: 0;
@@ -824,14 +831,16 @@ textarea.form-control {
   list-style: none;
 }
 .navbar-nav > li > a {
-  color: #4a4112;
+  color: #fff;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
+  font-size: 14px;
   display: block;
-  padding: 10px 15px;
+  padding: 5px 0;
   font-weight: 400;
 }
 .navbar-nav > li > a:hover {
-  color: #4a4112;
+  color: #fff;
 }
 .navbar-nav .menu-level-1 {
   display: none;
@@ -873,7 +882,7 @@ textarea.form-control {
   display: none;
 }
 .header-contact {
-  padding: 30px 15px 100px;
+  padding: 30px 0;
 }
 
 /* End Header
@@ -1049,6 +1058,7 @@ textarea.form-control {
   background: var(--bs-light);
   position: relative;
   padding: 35px 0 21px;
+  font-weight: 400;
 }
 .footer-bottom:before {
   content: "";
@@ -1223,12 +1233,13 @@ textarea.form-control {
   padding: 13px 0 0;
   width: auto;
 }
-.block-img-text-cta .icons-list ul {
+.block-img-text-cta .icons-list .swiper-06 {
   padding-bottom: 38px;
 }
-.block-img-text-cta .icons-list ul li {
+.block-img-text-cta .icons-list a {
   margin: 0 30px 0 0;
   min-width: 130px;
+  display: block;
 }
 .block-img-text-cta .icons-list .icon {
   margin: 0 auto -13px;
@@ -1242,6 +1253,9 @@ textarea.form-control {
   height: 115px;
   display: flex;
   align-items: center;
+}
+.block-slider-logos.bg-grid {
+  background-image: url(../img/bg/bg-cross-gray.svg);
 }
 .block-slider-logos .swiper .swiper-slide {
   width: auto;
@@ -1259,6 +1273,9 @@ textarea.form-control {
 /* block-featured-services */
 .block-featured-services {
   padding: 12px 0 76px;
+}
+.block-featured-services.bg-grid {
+  background-image: url(../img/bg/bg-cross-gray.svg);
 }
 
 /* block-text-img */
@@ -1560,6 +1577,13 @@ textarea.form-control {
   width: auto;
   height: 100%;
   object-fit: cover;
+}
+.block-cta-banner--img-lg .banner-image {
+  height: auto;
+}
+.block-cta-banner--img-lg .banner-image img {
+  width: 100%;
+  object-position: center top;
 }
 
 .block-cta-banner .banner-text {
@@ -1863,10 +1887,15 @@ textarea.form-control {
 
 /* block-usps */
 .block-usps {
-  padding: 40px 0 34px;
+  padding: 20px 0 0;
 }
-.block-usps .row {
-  --bs-gutter-y: 60px;
+.block-usps .swiper {
+  margin: 0 -15px;
+  padding: 20px 50px 40px 15px;
+}
+.block-usps .swiper .swiper-slide {
+  width: 270px;
+  height: auto;
 }
 .block-usps .item {
   box-shadow: 0px 15px 20px rgba(160, 126, 71, 0.306);
@@ -2030,6 +2059,9 @@ textarea.form-control {
 }
 .card-download .link-arrow {
   color: #000;
+}
+.block-tabs .tab-pane .video-wrapper {
+  padding: 0 15px;
 }
 .video-wrapper .video-trigger {
   display: block;
@@ -2312,7 +2344,7 @@ textarea.form-control {
   right: 23px;
   bottom: 20px;
   top: -26px;
-  background: url(../img/bg/bg-cross-page-banner.svg) 0 repeat;
+  background: url(../img/bg/bg-cross-page-banner.svg) right 0 repeat;
   opacity: 0.22;
 }
 .block-page-hero .text .subtitle {
@@ -2509,7 +2541,7 @@ textarea.form-control {
   margin: 50px 0 0;
 }
 .card-partner-logo {
-  height: 170px;
+  height: 100px;
   box-shadow: 0px 15px 20px rgba(160, 126, 71, 0.306);
 }
 .card-partner-logo .card-image {
@@ -2518,6 +2550,12 @@ textarea.form-control {
   height: 100%;
   justify-content: center;
   align-items: center;
+  padding: 20px;
+}
+.card-partner-logo .card-image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 /* block-about-list */
@@ -3036,6 +3074,7 @@ textarea.form-control {
   display: flex;
   flex-direction: column;
   font-weight: 500;
+  align-items: center;
 }
 .block-contact-list ul a .icon {
   display: flex;

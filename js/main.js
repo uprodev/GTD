@@ -191,6 +191,34 @@ jQuery(document).ready(function ($) {
       },
     });
   }
+  if ($(".swiper-05").length) {
+    const swiper5 = new Swiper(".swiper-05", {
+      spaceBetween: 25,
+      slidesPerView: "auto",
+      breakpoints: {
+        992: {
+          spaceBetween: 30,
+          slidesPerView: 4,
+          allowTouchMove: false,
+        },
+      },
+    });
+  }
+  if ($(".swiper-06").length) {
+    document.querySelectorAll(".swiper-06").forEach((el) => {
+      const swiper6 = new Swiper(el, {
+        spaceBetween: 25,
+        slidesPerView: "auto",
+        breakpoints: {
+          600: {
+            spaceBetween: 0,
+            slidesPerView: 3,
+            allowTouchMove: false,
+          },
+        },
+      });
+    });
+  }
   if ($(".product-detail-slider").length) {
     const swiperThumbs = new Swiper(".swiper-thumbs", {
       spaceBetween: 10,
@@ -225,6 +253,7 @@ jQuery(document).ready(function ($) {
       video.get(0).play();
     })
     .on("click", ".btn-text-more button", function () {
+      $(this).parent().hide();
       $(this).parents(".block-text").find(".text-hidden").slideToggle(300);
     });
 
