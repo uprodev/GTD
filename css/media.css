@@ -36,6 +36,10 @@
     line-height: 24px;
     margin: 0;
   }
+
+  .block-text-img .image img {
+    height: auto;
+  }
 }
 @media screen and (min-width: 1200px) {
   h1,
@@ -65,6 +69,13 @@
     line-height: 30px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .block-usps-text ul h4 {
+    font-size: 20px;
+  }
+}
+
 @media screen and (max-width: 575px) {
   .block-page-hero .text h1 {
     font-size: 40px;
@@ -109,6 +120,12 @@
   }
   .block-contact-list ul li:not(:last-child) {
     margin: 0;
+  }
+
+  .block-usps-text ul {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
   }
 }
 
@@ -265,7 +282,7 @@
     display: none;
   }
   .block-contact-form textarea.form-control {
-    height: 145px;
+    height: 145px !important;
   }
   .block-contact-form .submit {
     padding: 12px 0 0;
@@ -319,6 +336,9 @@
   }
   .about-list-row .image {
     margin: 0;
+  }
+  .about-list-row .image img {
+    height: auto;
   }
   .about-list-row .text p {
     max-width: 432px;
@@ -383,10 +403,12 @@
     top: 40px;
   }
 
-  .block-usps-text ul {
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
+  .block-usps-text ul .icon {
+    width: 216px;
+    height: 216px;
+  }
+  .block-usps-text ul .icon img {
+    width: auto;
   }
 
   /* block-form-primary */
@@ -801,10 +823,10 @@
   .block-text-img:not(.bg-secondary).bg-grid {
     background-image: url(../img/bg/bg-cross-gray-lg.svg);
   }
-  .block-text-img + .block-text-img {
+  /* .block-text-img + .block-text-img {
     margin-top: -55px;
     padding-top: 0;
-  }
+  } */
   .block-text-img--narrow {
     padding: 93px 0 108px;
   }
@@ -1257,7 +1279,8 @@
     margin: 45px 0 0 -11px;
   }
   .block-page-hero .text {
-    padding: 34px 37px 44px;
+    width: fit-content;
+    padding: 34px 80px 44px 37px;
   }
   .block-page-hero .text .subtitle {
     font-size: 18px;
@@ -1450,7 +1473,7 @@
     width: 100%;
   }
   .page-contact .block-page-hero .contact-form textarea.form-control {
-    height: 151px;
+    height: 151px !important;
   }
 
   .block-company-info {
@@ -1469,6 +1492,10 @@
   .block-usps .swiper {
     margin: 0 -15px;
     padding: 20px 15px 40px;
+  }
+
+  .block-contact-list ul a {
+    align-items: flex-start;
   }
 }
 
