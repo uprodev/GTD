@@ -1180,6 +1180,9 @@ textarea.form-control {
 .banner-slider--inner {
   margin: 0 0 88px;
 }
+.btn-scroll-down {
+  z-index: 9;
+}
 .banner-slider--inner .btn-scroll-down {
   background: url(../img/icons/ico-scroll.svg) no-repeat;
   border: none;
